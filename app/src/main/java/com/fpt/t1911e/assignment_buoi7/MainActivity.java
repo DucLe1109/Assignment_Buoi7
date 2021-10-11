@@ -6,8 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.google.gson.JsonElement;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,13 +49,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {
                 List<Item> list = response.body();
-                if(list != null) {
+                if (list != null) {
                     for (Item x : list) {
                         list_item.add(x);
                     }
                     adapter.notifyDataSetChanged();
                 }
             }
+
             @Override
             public void onFailure(Call<List<Item>> call, Throwable t) {
 
@@ -63,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
 //            @Override
 //            public void onResponse(Call<List<Item2>> call, Response<List<Item2>> response) {
 //                List<Item2> list = response.body();
-//                if(list != null){
-//                    for (Item2 x: list) {
+//                if (list != null) {
+//                    for (Item2 x : list) {
 //                        list_item2.add(x);
 //                    }
 //                    adapter.notifyDataSetChanged();
@@ -77,5 +81,4 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
     }
-
 }

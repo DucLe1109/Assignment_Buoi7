@@ -28,16 +28,32 @@
         android:textColor="@color/white"
         />
 
-    <TextView
-        android:id="@+id/tvTemp"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="27"
-        android:layout_marginTop="0dp"
-        android:layout_gravity="center"
-        android:textSize="80sp"
-        android:textColor="@color/white"
-        />
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/tvTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="center"
+            android:textSize="80sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="o"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="center"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/tvTemp"
+            />
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

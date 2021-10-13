@@ -55,14 +55,27 @@
             />
     </RelativeLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/white"
+        android:layout_marginBottom="10dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/_12Hour_RecycleView"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/_5Days_RecycleView"/>
+        android:id="@+id/_5Days_RecycleView" />
 
 </LinearLayout>

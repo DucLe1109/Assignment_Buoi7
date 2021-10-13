@@ -1,17 +1,12 @@
 package com.fpt.t1911e.assignment_buoi7;
 
+import java.util.Date;
+import java.util.List;
+
 public class DailyForecasts {
     private String Date;
     private Temperature Temperature;
     private Day Day;
-
-    public Day getDay() {
-        return Day;
-    }
-
-    public void setDay(Day day) {
-        Day = day;
-    }
 
     public String getDate() {
         return Date;
@@ -27,5 +22,13 @@ public class DailyForecasts {
 
     public void setTemperature(com.fpt.t1911e.assignment_buoi7.Temperature temperature) {
         Temperature = temperature;
+    }
+
+    public com.fpt.t1911e.assignment_buoi7.Day getDay() {
+        return Day;
+    }
+
+    public void setDay(com.fpt.t1911e.assignment_buoi7.Day day) {
+        Day = day;
     }
 }

@@ -18,11 +18,11 @@ import java.util.List;
 
 public class Item2Adapter extends RecyclerView.Adapter {
     private Activity activity;
-    private List<Item2> list_item2;
+    private List<DailyForecasts> list_DailyForecasts;
 
-    public Item2Adapter(Activity activity, List<Item2> list_item2) {
+    public Item2Adapter(Activity activity, List<DailyForecasts> list_DailyForecasts) {
         this.activity = activity;
-        this.list_item2 = list_item2;
+        this.list_DailyForecasts = list_DailyForecasts;
     }
 
     @NonNull
@@ -36,11 +36,11 @@ public class Item2Adapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Item2Holder item2Holder = (Item2Holder) holder;
-        Item2 _item = list_item2.get(position);
-        String _day = convertTime(_item.getDailyForecasts().getDate());
+        DailyForecasts _item = list_DailyForecasts.get(position);
+        String _day = convertTime(_item.getDate());
         item2Holder.tvDay.setText(_day);
 
-        int number_of_icon = _item.getDailyForecasts().getDay().getIcon();
+        int number_of_icon = _item.getDay().getIcon();
         String url_icon;
         if (number_of_icon < 10) {
             url_icon = "https://developer.accuweather.com/sites/default/files/0" + number_of_icon + "-s.png";
@@ -49,13 +49,13 @@ public class Item2Adapter extends RecyclerView.Adapter {
         }
         Glide.with(this.activity).load(url_icon).into(item2Holder.ivIcon2);
 
-        item2Holder.tvMax_temp.setText(String.valueOf(_item.getDailyForecasts().getTemperature().getMaximum().getValue()));
-        item2Holder.tvMin_temp.setText(String.valueOf(_item.getDailyForecasts().getTemperature().getMinimum().getValue()));
+        item2Holder.tvMax_temp.setText(String.valueOf(_item.getTemperature().getMaximum().getValue()));
+        item2Holder.tvMin_temp.setText(String.valueOf(_item.getTemperature().getMinimum().getValue()));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list_DailyForecasts.size();
     }
 
 
